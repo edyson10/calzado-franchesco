@@ -10,7 +10,9 @@ $contrasena = $_POST['contrasenaPersonal'];
 $repContrasena = $_POST['repContrasenaPersonal'];
 $rol = $_POST['rolPersonal'];
 
-if ($contrasena != $repContrasena) {
+if ($rol == "seleccione") {
+    $respuesta = array('respuesta' => 'noseleccione');
+} else if ($contrasena != $repContrasena) {
     $respuesta = array('respuesta' => 'nocontrasena');
 } else {
     $sql = $conexion->query("INSERT INTO persona (id, nombre, apellido, identificacion, fecha_nacimiento, contrasena, estado, rol) 

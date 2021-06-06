@@ -1,5 +1,8 @@
 <?php
 
+session_start();
+include_once 'model/Conexion.php';
+
 if (isset($_GET["ubicacion"])) { ?>
     <!DOCTYPE html>
     <html lang="es">
@@ -34,16 +37,22 @@ if (isset($_GET["ubicacion"])) { ?>
 
     <?php
     if ($_GET["ubicacion"] == "Login") {
+        if (empty($_SESSION['rol'])) {
+            //header("Location: Login");
+        }
         include "modulos/navegacion/" . $_GET["ubicacion"] . ".php";
     } else if ($_GET["ubicacion"] == "Administracion" || $_GET["ubicacion"] == "Categoria"
-    || $_GET["ubicacion"] == "Ver-personal" || $_GET["ubicacion"] == "Registrar-personal") { ?>
+    || $_GET["ubicacion"] == "Ver-personal" || $_GET["ubicacion"] == "Registrar-personal" || $_GET["ubicacion"] == "Salir"
+    || $_GET["ubicacion"] == "Perfil" || $_GET["ubicacion"] == "Producto") { ?>
 
         <body class="hold-transition sidebar-mini layout-fixed">
             <div class="wrapper">
                 <?php
-                include_once 'model/Conexion.php';
                 include_once "modulos/header.php";
                 include_once "modulos/menu.php";
+                if (empty($_SESSION['rol'])) {
+                    header("Location: Login");
+                }
                 ?>
                 <div class="content-wrapper">
                     <?php include "modulos/navegacion/" . $_GET["ubicacion"] . ".php"; ?>
@@ -94,6 +103,7 @@ if (isset($_GET["ubicacion"])) { ?>
         <script src="view/presentacion/js/sweetalert2.min.js"></script>
         <script src="view/presentacion/js/alertas.js"></script>
         <script src="view/presentacion/js/registrar.js"></script>
+        <script src="view/presentacion/js/login.js"></script>
         </body>
 
     </html>

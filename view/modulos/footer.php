@@ -1,8 +1,12 @@
 <footer class="main-footer">
-  <strong>Copyright &copy; 2014-2020 <a href="https://adminlte.io">AdminLTE.io</a>.</strong>
+  <strong>Copyright &copy; 
+    <script> document.write(new Date().getFullYear()); </script> 
+    <a href="https://ingsistemas.cloud.ufps.edu.co/" target="_blank">
+      Universidad Francisco de Paula Santander - Ingenier&iacute;a de Sistemas
+    </a>|</strong>
   All rights reserved.
   <div class="float-right d-none d-sm-inline-block">
-    <b>Version</b> 3.1.0-rc
+    <b>Version</b> 1.0.0
   </div>
 </footer>
 

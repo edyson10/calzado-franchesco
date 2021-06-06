@@ -70,7 +70,7 @@
                                     <div class="form-group row">
                                         <label for="exampleInput" class="col-sm-4 col-form-label">Rol</label>
                                         <div class="col-sm-8">
-                                            <select class="custom-select rounded-0" name="rolPersonal" id="rolPersonal" onchange="myRazon()">
+                                            <select class="custom-select rounded-0" name="rolPersonal" id="rolPersonal">
                                                 <option value="seleccione">- Seleccione -</option>
                                                 <?php
                                                 $query = $conexion->query("SELECT * FROM rol");

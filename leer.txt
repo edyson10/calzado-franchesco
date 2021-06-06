@@ -1,0 +1,6 @@
+Crea una base de datos llamada calzado_franchesco e importa la base de datos que esta en el proyecto y listo.
+
+Credenciales administrador:
+Identificacion:		1090
+Password:		1234
+Rol:			Administrador

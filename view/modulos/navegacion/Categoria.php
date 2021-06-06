@@ -19,6 +19,7 @@
     </div><!-- /.container-fluid -->
 </section>
 
+<!-- Modal para registrar categoria -->
 <div class="modal fade" id="modal-default">
     <div class="modal-dialog">
         <div class="modal-content">

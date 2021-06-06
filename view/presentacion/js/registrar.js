@@ -38,7 +38,7 @@ $(document).ready(function () {
             nombrePersonal: { required: true },
             apellidoPersonal: { required: true },
             identificacionPersonal: { required: true, number: true },
-            fechaNacimientoPersonal: { required: true, number: true },
+            fechaNacimientoPersonal: { required: true },
             contrasenaPersonal: { required: true },
             repContrasenaPersonal: { required: true }
         },
@@ -90,6 +90,8 @@ $(document).ready(function () {
                         respuestaError("Error!", "Ocurrio un error al registrar el personal");
                     } else if (data.respuesta == 'nocontrasena') {
                         respuestaError("Error!", "Las contraseñas deben ser iguales.");
+                    } else if (data.respuesta == 'noseleccione') {
+                        respuestaError("Error!", "Debe de seleccionar un rol correcto.");
                     }
                 }
             });
