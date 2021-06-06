@@ -1,0 +1,9 @@
+#bloquea directorios del proyecto
+Options ALL -Indexes
+#para poder utilizar rewriterule
+RewriteEngine on
+
+#convierte  las palabras en variables get
+#RewriteRule ^?(([a-zA-Z0-9-]+)?/?([a-zA-Z0-9-]+)?/ $ index.php?ubicacion=$1
+#RewriteRule ^(\w+)$ index.php?ubicacion=$1
+RewriteRule ^([a-zA-Z0-9/ñÑ-]+)$ index.php?ubicacion=$1
