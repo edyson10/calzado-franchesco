@@ -36,7 +36,7 @@ if (isset($_GET["ubicacion"])) { ?>
     if ($_GET["ubicacion"] == "Login") {
         include "modulos/navegacion/" . $_GET["ubicacion"] . ".php";
     } else if ($_GET["ubicacion"] == "Administracion" || $_GET["ubicacion"] == "Categoria"
-    || $_GET["ubicacion"] == "Ver-personal") { ?>
+    || $_GET["ubicacion"] == "Ver-personal" || $_GET["ubicacion"] == "Registrar-personal") { ?>
 
         <body class="hold-transition sidebar-mini layout-fixed">
             <div class="wrapper">

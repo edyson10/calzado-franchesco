@@ -37,7 +37,7 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="pages/charts/flot.html" class="nav-link">
+                            <a href="Registrar-personal" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Registrar personal</p>
                             </a>

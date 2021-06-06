@@ -2,20 +2,25 @@
 
 require_once 'Conexion.php';
 
-$nombre = $_POST['nombre'];
-$apellido = $_POST['apellido'];
-$identificacion = $_POST['identificacion'];
-$fecha_nacimiento = $_POST['fecha_nacimiento'];
-$contrasena = $_POST['contrasena'];
-$rol = $_POST['rol'];
+$nombre = $_POST['nombrePersonal'];
+$apellido = $_POST['apellidoPersonal'];
+$identificacion = $_POST['identificacionPersonal'];
+$fecha_nacimiento = $_POST['fechaNacimientoPersonal'];
+$contrasena = $_POST['contrasenaPersonal'];
+$repContrasena = $_POST['repContrasenaPersonal'];
+$rol = $_POST['rolPersonal'];
 
-$sql = $conexion->query("INSERT INTO persona (id, nombre, apellido, identificacion, fecha_nacimiento, contrasena, estado, rol) 
-VALUES (NULL, '$nombre', '$apellido', '$identificacion', '$fecha_nacimiento', '$contrasena', '1', '$rol')");
-
-if ($sql) {
-    $respuesta = array('respuesta' => 'exito');
+if ($contrasena != $repContrasena) {
+    $respuesta = array('respuesta' => 'nocontrasena');
 } else {
-    $respuesta = array('respuesta' => 'error');
+    $sql = $conexion->query("INSERT INTO persona (id, nombre, apellido, identificacion, fecha_nacimiento, contrasena, estado, rol) 
+    VALUES (NULL, '$nombre', '$apellido', '$identificacion', '$fecha_nacimiento', '$contrasena', '1', '$rol')");
+
+    if ($sql) {
+        $respuesta = array('respuesta' => 'exito');
+    } else {
+        $respuesta = array('respuesta' => 'error');
+    }
 }
 
 echo json_encode($respuesta);
