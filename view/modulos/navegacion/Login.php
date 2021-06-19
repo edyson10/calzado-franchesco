@@ -1,7 +1,7 @@
 <?php
 
 if (isset($_SESSION['rol'])) {
-    header('Location: Administracion');
+    header('Location: Perfil');
 }
 ?>
 <body class="hold-transition login-page">

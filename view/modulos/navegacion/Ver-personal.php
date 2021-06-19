@@ -53,8 +53,7 @@
                                             <td>" . $row["rol"] . "</td>
                                             <td>" . $estado . "</td>
                                             <td>
-                                                <a class='btn btn-info' onclick='verPersonal(" . $row["identificacion"] . ")'><i class='fas fa-eye'></i></a>
-                                                <a class='btn btn-danger' onclick='eliminarPersonal(" . $row["identificacion"] . ")'><i class='fas fa-trash'></i></a>
+                                                <a class='btn btn-danger' onclick='eliminarPersonal(" . $row["id"] . ")'><i class='fas fa-trash'></i></a>
                                             </td>
                                         </tr>";
                                 }

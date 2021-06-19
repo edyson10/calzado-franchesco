@@ -29,15 +29,33 @@
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
-            <form name="FormRegistrarCategoria" id="FormRegistrarCategoria" method="POST">
+            <form name="FormRegistrarProducto" id="FormRegistrarProducto" method="POST">
                 <div class="modal-body">
                     <div class="form-group row">
-                        <label for="exampleInput" class="col-sm-3 col-form-label">Categoria</label>
-                        <div class="col-sm-9">
-                            <select class="custom-select rounded-0" name="rolPersonal" id="rolPersonal">
+                        <label for="exampleInput" class="col-sm-4 col-form-label">Descripci&oacute;n</label>
+                        <div class="col-sm-8">
+                            <input type="text" name="producto" class="form-control" id="producto" placeholder="Ingrese una descripci&oacute;n del producto.">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="exampleInput" class="col-sm-4 col-form-label">Cantidad</label>
+                        <div class="col-sm-8">
+                            <input type="text" name="cantidadProducto" class="form-control" id="cantidadProducto" placeholder="Ingrese una cantidad.">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="exampleInput" class="col-sm-4 col-form-label">Precio Unitario</label>
+                        <div class="col-sm-8">
+                            <input type="text" name="precioUnitarioProducto" class="form-control" id="precioUnitarioProducto" placeholder="Ingrese el precio unitario.">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="exampleInput" class="col-sm-4 col-form-label">Materia prima</label>
+                        <div class="col-sm-8">
+                            <select class="custom-select rounded-0" name="materiaPrimaProducto" id="materiaPrimaProducto">
                                 <option value="seleccione">-Seleccione-</option>
                                 <?php
-                                $query = $conexion->query("SELECT * FROM categoria");
+                                $query = $conexion->query("SELECT * FROM materia_prima");
                                 while ($valores = mysqli_fetch_array($query)) {
                                     echo '<option value="' . $valores['id'] . '">' . utf8_encode($valores['descripcion']) . '</option>';
                                 }
@@ -46,15 +64,17 @@
                         </div>
                     </div>
                     <div class="form-group row">
-                        <label for="exampleInput" class="col-sm-3 col-form-label">Descripci&oacute;n</label>
-                        <div class="col-sm-9">
-                            <input type="text" name="categoria" class="form-control" id="categoria" placeholder="Ingrese una descripci&oacute;n del producto.">
-                        </div>
-                    </div>
-                    <div class="form-group row">
-                        <label for="exampleInput" class="col-sm-3 col-form-label">Cantidad</label>
-                        <div class="col-sm-9">
-                            <input type="text" name="categoria" class="form-control" id="categoria" placeholder="Ingrese una cantidad.">
+                        <label for="exampleInput" class="col-sm-4 col-form-label">Categoria</label>
+                        <div class="col-sm-8">
+                            <select class="custom-select rounded-0" name="categoriaProducto" id="categoriaProducto">
+                                <option value="seleccione">-Seleccione-</option>
+                                <?php
+                                $query = $conexion->query("SELECT * FROM categoria");
+                                while ($valores = mysqli_fetch_array($query)) {
+                                    echo '<option value="' . $valores['id'] . '">' . utf8_encode($valores['descripcion']) . '</option>';
+                                }
+                                ?>
+                            </select>
                         </div>
                     </div>
                 </div>
@@ -101,8 +121,7 @@
                                             <td>" . $row["descripcion"] . "</td>
                                             <td>" . $row["cantidad"] . "</td>
                                             <td>
-                                                <a class='btn btn-info' onclick='verPersonal(" . $row["id"] . ")'><i class='fas fa-eye'></i></a>
-                                                <a class='btn btn-danger' onclick='eliminarPersonal(" . $row["id"] . ")'><i class='fas fa-trash'></i></a>
+                                                <a class='btn btn-danger' onclick='eliminarProducto(" . $row["id"] . ")'><i class='fas fa-trash'></i></a>
                                             </td>
                                         </tr>";
                                 }

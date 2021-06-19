@@ -2,14 +2,21 @@
 
 require_once 'Conexion.php';
 
-$categoria = $_POST['categoria'];
-$descripcion = $_POST['descripcion'];
-$cantidad = $_POST['cantidad'];
+$producto = $_POST['producto'];
+$cantidad = $_POST['cantidadProducto'];
+$precio = $_POST['precioUnitarioProducto'];
+$categoria = $_POST['categoriaProducto'];
+$materia_prima = $_POST['materiaPrimaProducto'];
 
-if (empty($categoria)) {
+if (empty($producto)) {
+    $respuesta = array('respuesta' => 'vacio');
+} else if (empty($cantidad)) {
+    $respuesta = array('respuesta' => 'vacio');
+} else if (empty($precio)) {
     $respuesta = array('respuesta' => 'vacio');
 } else {
-    $sql = $conexion->query("INSERT INTO producto (id, categoria, descripcion, cantidad) VALUES (NULL, '$categoria', '$descripcion', '$cantidad')");
+    $sql = $conexion->query("INSERT INTO producto (id, descripcion, cantidad, precioUnitario, categoria, materia_prima) 
+    VALUES (NULL, '$producto', '$cantidad', '$precio', '$categoria', '$materia_prima')");
 
     if ($sql) {
         $respuesta = array('respuesta' => 'exito');

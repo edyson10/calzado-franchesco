@@ -12,7 +12,7 @@ $identificacion = $row['identificacion'];
 $nombre = $row['nombre'];
 $apellido = $row['apellido'];
 $fecha_nacimiento = $row['fecha_nacimiento'];
-$rol = "Administrador";
+$rol = $row['rol'];
 
 if ($row['estado'] == '1') {
     $estado = "Activo";
@@ -42,6 +42,7 @@ if ($row['estado'] == '1') {
 <section class="content">
     <div class="container-fluid">
         <div class="row">
+            <div class="col-md-3"></div>
             <div class="col-md-4">
                 <!-- Profile Image -->
                 <div class="card card-primary card-outline">
@@ -63,6 +64,9 @@ if ($row['estado'] == '1') {
                                 <b>Fecha nacimiento</b> <a class="float-right"><?php echo $fecha_nacimiento; ?></a>
                             </li>
                             <li class="list-group-item">
+                                <b>Rol</b> <a class="float-right"><?php echo $rol; ?></a>
+                            </li>
+                            <li class="list-group-item">
                                 <b>Estado</b> <a class="float-right"><?php echo $estado; ?></a>
                             </li>
                         </ul>
@@ -71,6 +75,7 @@ if ($row['estado'] == '1') {
                 </div>
                 <!-- /.card -->
             </div>
+            <div class="col-md-3"></div>
         </div>
     </div>
 </section>

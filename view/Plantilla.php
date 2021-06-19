@@ -10,7 +10,7 @@ if (isset($_GET["ubicacion"])) { ?>
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>AdminLTE 3 | Dashboard</title>
+        <title>Franchesco | Dashboard</title>
 
         <!-- Google Font: Source Sans Pro -->
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
@@ -41,9 +41,11 @@ if (isset($_GET["ubicacion"])) { ?>
             //header("Location: Login");
         }
         include "modulos/navegacion/" . $_GET["ubicacion"] . ".php";
-    } else if ($_GET["ubicacion"] == "Administracion" || $_GET["ubicacion"] == "Categoria"
-    || $_GET["ubicacion"] == "Ver-personal" || $_GET["ubicacion"] == "Registrar-personal" || $_GET["ubicacion"] == "Salir"
-    || $_GET["ubicacion"] == "Perfil" || $_GET["ubicacion"] == "Producto") { ?>
+    } else if (
+        $_GET["ubicacion"] == "Administracion" || $_GET["ubicacion"] == "Categoria"
+        || $_GET["ubicacion"] == "Ver-personal" || $_GET["ubicacion"] == "Registrar-personal" || $_GET["ubicacion"] == "Salir"
+        || $_GET["ubicacion"] == "Perfil" || $_GET["ubicacion"] == "Producto" || $_GET["ubicacion"] == "Materia-prima"
+    ) { ?>
 
         <body class="hold-transition sidebar-mini layout-fixed">
             <div class="wrapper">
@@ -104,6 +106,7 @@ if (isset($_GET["ubicacion"])) { ?>
         <script src="view/presentacion/js/alertas.js"></script>
         <script src="view/presentacion/js/registrar.js"></script>
         <script src="view/presentacion/js/login.js"></script>
+        <script src="view/presentacion/js/eliminar.js"></script>
         </body>
 
     </html>
